@@ -1,62 +1,81 @@
+.colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: orange;
+}
+
 .torre {
   /* Display flex para empilhar discos*/
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;/*Discos alinhados a partir da base*/
+  justify-content: flex-end; /*Discos alinhados a partir da base*/
   align-items: center;
   height: 300px;
   margin-top: 50px;
+  border-bottom: 40px solid black;
+  position: relative; /*Discos interagem só com a torre*/
+}
+
+.torre::before {
+  /* Elemento fantasma para visualizar pino*/
+  position: absolute; /*Se posiciona em relação a torre*/
+  content: "";
+  width: 20px;
+  height: 100%;
+  background-color: black;
+  z-index: 0; /*Coloca o pino atrás dos discos*/
 }
 
 .disco {
   /* Estilo para os discos */
   height: 20px;
+  z-index: 1; /*Coloca os discos na frente do pino*/
 }
 
-    #disco1 {
-    /* Estilo para o disco 1 */
-    width: 60px;
-    background-color: gray;
-    }
+#disco1 {
+  /* Estilo para o disco 1 */
+  width: 60px;
+  background-color: gray;
+}
 
-    #disco2 {
-    /* Estilo para o disco 2 */
-    width: 80px;
-    background-color: blue;
-    }
+#disco2 {
+  /* Estilo para o disco 2 */
+  width: 80px;
+  background-color: blue;
+}
 
-    #disco3 {
-    /* Estilo para o disco 3 */
-    width: 100px;
-    background-color: green;
-    }
+#disco3 {
+  /* Estilo para o disco 3 */
+  width: 100px;
+  background-color: green;
+}
 
-    #disco4 {
-    /* Estilo para o disco 4 */
-    width: 120px;
-    background-color: red;
-    }
+#disco4 {
+  /* Estilo para o disco 4 */
+  width: 120px;
+  background-color: red;
+}
 
-    #disco5 {
-    /* Estilo para o disco 5 */
-    width: 140px;
-    background-color: yellow;
-    }
+#disco5 {
+  /* Estilo para o disco 5 */
+  width: 140px;
+  background-color: yellow;
+}
 
-    #disco6 {
-    /* Estilo para o disco 6 */
-    width: 160px;
-    background-color: purple;
-    }
+#disco6 {
+  /* Estilo para o disco 6 */
+  width: 160px;
+  background-color: purple;
+}
 
-    #disco7 {
-    /* Estilo para o disco 7 */
-    width: 180px;
-    background-color: orange;
-    }
+#disco7 {
+  /* Estilo para o disco 7 */
+  width: 180px;
+  background-color: white;
+}
 
-    #disco8 {
-    /* Estilo para o disco 8 */
-    width: 200px;
-    background-color: pink;
-    }
+#disco8 {
+  /* Estilo para o disco 8 */
+  width: 200px;
+  background-color: pink;
+}
