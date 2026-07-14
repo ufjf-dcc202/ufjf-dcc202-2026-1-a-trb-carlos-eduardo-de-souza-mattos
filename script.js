@@ -50,6 +50,24 @@ function moverDisco (torre){
     const tamanhoSelecionado = Number(discoSelecionado.dataset.tamanho);//variavel tamanho guarda o tamanho de cada disco
     console.log(tamanhoSelecionado);//mostra tamanho no console
 
+    let torreInicial = discoSelecionado.parentElement;//guarda a torre atual do disco selecionado
+
+    if(torreInicial===torre){//regra2 - disco não deve estar na torre
+        console.log(`Disco ja esta na torre`);
+        return;
+    }
+
+    if(torre.children.length>0){//verifica se a torre selecionada está vazia (correção de bug com torre vazia)
+        let topoSelecionado=torre.firstElementChild;//guarda o disco do topo selecionado
+        let tamanhoTopoSelecionado = Number(topoSelecionado.dataset.tamanho);// guarda o tamanho do disco do topo selecionado
+
+        if(tamanhoSelecionado>tamanhoTopoSelecionado){//regra3 - O disco selecionado deve ser menor do que o disco da torre selecionada
+            console.log('Disco maior que a base');
+            return;
+        }
+    }
+    
+
     torre.prepend(discoSelecionado);//move disco selecionado para torre selecionada de cima para baixo
     console.log(`disco ${discoSelecionado.id} movido`)
     discoSelecionado.classList.remove('selecionado');
