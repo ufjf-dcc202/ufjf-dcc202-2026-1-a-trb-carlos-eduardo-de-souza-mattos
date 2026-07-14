@@ -1,8 +1,7 @@
 let discoSelecionado = null; //guarda disco selecionado
 let torreSelecionada = null; //guarda torre selecionada
 
-function selecionaDisco(disco) {
-  /*função para selecionar disco*/
+function selecionaDisco(disco) {//função para selecionar disco
   if (discoSelecionado === null) {//seleciona disco caso nada esteja selecionado
     discoSelecionado = disco;
     discoSelecionado.classList.add("selecionado");
@@ -42,12 +41,17 @@ torres.forEach(torre => {
 });
 
 function moverDisco (torre){
-    if(discoSelecionado===null){//caso nenhum disco esteja selecionado
+
+    if(discoSelecionado===null){//regra1 - O disco deve estar selecionado
         console.log(`Nenhum disco selecionado`);
         return;
     }
-    torre.appendChild(discoSelecionado);//move disco selecionado para torre selecionada
-        console.log(`disco ${discoSelecionado.id} movido`)
+
+    const tamanhoSelecionado = Number(discoSelecionado.dataset.tamanho);//variavel tamanho guarda o tamanho de cada disco
+    console.log(tamanhoSelecionado);//mostra tamanho no console
+
+    torre.prepend(discoSelecionado);//move disco selecionado para torre selecionada de cima para baixo
+    console.log(`disco ${discoSelecionado.id} movido`)
     discoSelecionado.classList.remove('selecionado');
     discoSelecionado=null;
 }

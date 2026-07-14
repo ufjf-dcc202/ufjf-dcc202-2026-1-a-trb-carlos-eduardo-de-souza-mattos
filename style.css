@@ -67,6 +67,10 @@ body { /*Style para centralização do body*/
   border-radius: 10px;
 }
 
+.disco.selecionado{
+  border: 2px solid yellow;
+}
+
 #disco1 {
   /* Estilo para o disco 1 */
   width: 60px;
