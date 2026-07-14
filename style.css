@@ -1,7 +1,32 @@
+* {/* organiza todos os containers para excluir bordas*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { /*Style para centralização do body*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* centraliza horizontalmente */
+    min-height: 600px; /* Sobe o jogo um pouco */
+    background: #0a0a1a;
+}
+
+
+.titulo {
+  text-align: center;
+  background: linear-gradient(rgb(0, 73, 0),rgb(0, 49, 0));
+  color:rgb(214, 204, 204);
+  width: 90%;
+}
+
+
 .colunas {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: orange;
+  background: linear-gradient(45deg,rgb(77, 9, 155),rgb(53, 3, 110),rgb(32, 1, 66) );
+  width: 90%;
 }
 
 .torre {
@@ -12,70 +37,80 @@
   align-items: center;
   height: 300px;
   margin-top: 50px;
-  border-bottom: 40px solid black;
+  border-bottom: 40px solid;
   position: relative; /*Discos interagem só com a torre*/
 }
+.torre::after{/* Elemento fantasma para a base das torres*/
+    position:absolute;
+    content:"";
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(rgb(201, 137, 1),rgb(128, 84, 3));
+}
 
-.torre::before {
-  /* Elemento fantasma para visualizar pino*/
+.torre::before {  /* Elemento fantasma para visualizar pino*/
   position: absolute; /*Se posiciona em relação a torre*/
   content: "";
   width: 20px;
-  height: 100%;
-  background-color: black;
+  height: 70%;
+  background:linear-gradient(to right,rgb(43, 42, 42),black); /* Gradiente horizontal do pino**/
   z-index: 0; /*Coloca o pino atrás dos discos*/
+  border-radius: 10px 10px 0 0;
 }
 
 .disco {
   /* Estilo para os discos */
   height: 20px;
   z-index: 1; /*Coloca os discos na frente do pino*/
+  border-radius: 10px;
 }
 
 #disco1 {
   /* Estilo para o disco 1 */
   width: 60px;
-  background-color: gray;
+  background:linear-gradient(gray,darkgray);
 }
 
 #disco2 {
   /* Estilo para o disco 2 */
   width: 80px;
-  background-color: blue;
+  background:linear-gradient(blue,rgb(0, 0, 58));
 }
 
 #disco3 {
   /* Estilo para o disco 3 */
   width: 100px;
-  background-color: green;
+  background:linear-gradient(green,rgb(0, 58, 0));
 }
 
 #disco4 {
   /* Estilo para o disco 4 */
   width: 120px;
-  background-color: red;
+  background:linear-gradient(red,rgb(58, 0, 0));
 }
 
 #disco5 {
   /* Estilo para o disco 5 */
   width: 140px;
-  background-color: yellow;
+  background:linear-gradient(yellow,rgb(58, 58, 0));
 }
 
 #disco6 {
   /* Estilo para o disco 6 */
   width: 160px;
-  background-color: purple;
+  background:linear-gradient(purple,rgb(58, 0, 58));
 }
 
 #disco7 {
   /* Estilo para o disco 7 */
   width: 180px;
-  background-color: white;
+  background:linear-gradient(white,rgb(58, 58, 58));
 }
 
 #disco8 {
   /* Estilo para o disco 8 */
   width: 200px;
-  background-color: pink;
+  background:linear-gradient(pink,rgb(58, 58, 58));
 }
