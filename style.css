@@ -1,0 +1,45 @@
+.torre {/* Display flex para empilhar discos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin-top: 50px;
+}
+
+
+.disco{ /* Estilo para os discos */
+    height: 20px;
+}
+#disco1 {/* Estilo para o disco 1 */
+    width: 60px;
+    background-color: gray;
+}
+#disco2 {/* Estilo para o disco 2 */
+    width: 80px;
+    background-color: blue;
+}
+#disco3 {/* Estilo para o disco 3 */
+    width: 100px;
+    background-color: green;
+}
+#disco4 {/* Estilo para o disco 4 */
+    width: 120px;
+    background-color: red;
+}
+#disco5 {/* Estilo para o disco 5 */
+    width: 140px;
+    background-color: yellow;
+}
+#disco6 {/* Estilo para o disco 6 */
+    width: 160px;
+    background-color: purple;
+}
+#disco7 {/* Estilo para o disco 7 */
+    width: 180px;
+    background-color: orange;
+}
+#disco8 {/* Estilo para o disco 8 */
+    width: 200px;
+    background-color: pink;
+}
