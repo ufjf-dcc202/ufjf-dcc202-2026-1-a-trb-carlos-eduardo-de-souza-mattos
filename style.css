@@ -7,10 +7,10 @@
 body { /*Style para centralização do body*/
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
     align-items: center; /* centraliza horizontalmente */
     min-height: 600px; /* Sobe o jogo um pouco */
     background: #0a0a1a;
+      margin-top: 50px;
 }
 
 
@@ -143,8 +143,8 @@ body { /*Style para centralização do body*/
     background: linear-gradient(45deg, green, greenyellow);
     padding: 10px 15px;
     border-radius: 8px;
-    min-width: 900px;
-    max-width: 900px;
+    min-width: 930px;
+    max-width: 930px;
 }
 
 .jogadas {
