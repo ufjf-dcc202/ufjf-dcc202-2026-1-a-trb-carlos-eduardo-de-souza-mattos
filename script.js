@@ -75,6 +75,7 @@ function moverDisco (torre){
         }
     }
     
+    adicionarHistorico(discoSelecionado.id, torreInicial.id, torre.id);//Atualiza o historico de jogadas apos movimento aceito
 
     torre.prepend(discoSelecionado);//move disco selecionado para torre selecionada de cima para baixo
     console.log(`disco ${discoSelecionado.id} movido`)
@@ -83,6 +84,23 @@ function moverDisco (torre){
 }
 
 /*HISTÓRICO*/
+
+let historico = [];        // array para guardar os movimentos (como objetos)
+let movimentos = 0;        // contador de movimentos
+
+function adicionarHistorico(discoId, origemId, destinoId) {
+    movimentos++;
+    const jogada = { // cria o objeto jogada com os dados da função moverDisco
+        numero: movimentos,
+        disco: discoId,
+        origem: origemId,
+        destino: destinoId
+    };
+    historico.push(jogada);//adiciona uma jogada
+    
+    console.log(`${jogada.numero}: ${jogada.disco} (${jogada.origem} → ${jogada.destino})`);//mostra dados do objeto jogada no console
+    console.log(`Total no histórico: ${historico.length} movimentos`); // calcula movimentos com base no tamanho do historico
+}
 
 
 
