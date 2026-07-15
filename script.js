@@ -97,9 +97,29 @@ function adicionarHistorico(discoId, origemId, destinoId) {
         destino: destinoId
     };
     historico.push(jogada);//adiciona uma jogada
-    
+
     console.log(`${jogada.numero}: ${jogada.disco} (${jogada.origem} → ${jogada.destino})`);//mostra dados do objeto jogada no console
     console.log(`Total no histórico: ${historico.length} movimentos`); // calcula movimentos com base no tamanho do historico
+
+    atualizarHistorico();
+}
+
+function atualizarHistorico() {//atualiza html do histórico e contador
+
+    const contador = document.querySelector('.contador');
+
+    if (contador!==null) {//verifica se não é a primeira jogada
+        contador.textContent = `Movimentos: ${movimentos}`;
+    }
+    
+    const container = document.querySelector('.jogadas');
+    container.innerHTML = '';//limpa para não recriar jogadas anteriores
+    
+    historico.forEach(mov => {
+        const div = document.createElement('div');
+        div.textContent = `${mov.numero}: ${mov.disco} (${mov.origem} → ${mov.destino})`;//preenche div com dados da jogada
+        container.appendChild(div);
+    });
 }
 
 

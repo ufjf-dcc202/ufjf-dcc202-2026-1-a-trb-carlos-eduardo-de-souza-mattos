@@ -140,16 +140,17 @@ body { /*Style para centralização do body*/
 }
 
 .historico {
-    display: flex;
-    flex-wrap: wrap;/* quebra linha */
     background: linear-gradient(45deg, green, greenyellow);
     padding: 10px 15px;
     border-radius: 8px;
-    gap: 5px;
+    min-width: 900px;
+    max-width: 900px;
 }
 
 .jogadas {
+    display: flex;
+    flex-wrap: wrap;/* quebra linha */
+    gap: 40px;
     color: black;
-    background-color: blue;
     font-weight: bold;
 }
