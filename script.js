@@ -125,6 +125,9 @@ function atualizarHistorico() {//atualiza html do histórico e contador
 /*REPRODUZIR HISTÓRICO*/
 
 document.querySelector('.btnReproduzir').addEventListener('click', reproduzirHistorico);
+
+let reproduzindo = false;//seta o histórico como não reproduzindo inicialmente
+
 function reproduzirHistorico() {
     console.log('Reproduzir clicado');
 
@@ -134,6 +137,18 @@ function reproduzirHistorico() {
     }
 
     console.log('Tem ' + historico.length + ' movimentos para reproduzir');
+
+    let numeroJogada = 0;// teste para pegar a primeira jogada e reproduzir
+    
+    // Pega o primeiro movimento
+    const movimento = historico[numeroJogada];// guarda a jogada do historico
+    console.log('Executando movimento' + movimento.numero + ': ' + movimento.disco + ' (' + movimento.origem + ' → ' + movimento.destino + ')');// mostra movimento no console
+    
+    const disco = document.getElementById(movimento.disco);//guarda disco do movimento para comparação
+    const destino = document.getElementById(movimento.destino);//guarda destino do movimento para comparação
+    
+        destino.prepend(disco);//coloca o disco da jogada no destino da jogada
+        console.log( movimento.disco + ' movido para ' + movimento.destino);
 }
 
 
