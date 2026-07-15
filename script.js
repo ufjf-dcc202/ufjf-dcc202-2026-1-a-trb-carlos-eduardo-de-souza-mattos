@@ -1,6 +1,9 @@
 let discoSelecionado = null; //guarda disco selecionado
 let torreSelecionada = null; //guarda torre selecionada
 
+
+/*DISCOS*/
+
 function selecionaDisco(disco) {//função para selecionar disco
   if (discoSelecionado === null) {//seleciona disco caso nada esteja selecionado
     discoSelecionado = disco;
@@ -78,3 +81,9 @@ function moverDisco (torre){
     discoSelecionado.classList.remove('selecionado');
     discoSelecionado=null;
 }
+
+/*HISTÓRICO*/
+
+
+
+

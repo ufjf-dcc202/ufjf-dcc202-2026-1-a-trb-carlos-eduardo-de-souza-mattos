@@ -118,3 +118,38 @@ body { /*Style para centralização do body*/
   width: 200px;
   background:linear-gradient(pink,rgb(58, 58, 58));
 }
+
+/*HISTÓRICO*/
+
+.interfaceHistorico {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 10px 20px;
+    gap: 20px;
+}
+
+.contador {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    background: linear-gradient(45deg,yellow,greenyellow);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.historico {
+    display: flex;
+    flex-wrap: wrap;/* quebra linha */
+    background: linear-gradient(45deg, green, greenyellow);
+    padding: 10px 15px;
+    border-radius: 8px;
+    gap: 5px;
+}
+
+.jogadas {
+    color: black;
+    background-color: blue;
+    font-weight: bold;
+}
