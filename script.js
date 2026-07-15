@@ -126,8 +126,6 @@ function atualizarHistorico() {//atualiza html do histórico e contador
 
 document.querySelector('.btnReproduzir').addEventListener('click', reproduzirHistorico);
 
-let reproduzindo = false;//seta o histórico como não reproduzindo inicialmente
-
 function reproduzirHistorico() {
     console.log('Reproduzir clicado');
 
@@ -135,20 +133,46 @@ function reproduzirHistorico() {
     console.log('Nenhum movimento no historico');
     return;
     }
-
     console.log('Tem ' + historico.length + ' movimentos para reproduzir');
 
-    let numeroJogada = 0;// teste para pegar a primeira jogada e reproduzir
+    const torre1 = document.getElementById('torre1');//guarda a primeira torre
+    const todosDiscos = document.querySelectorAll('.disco');//seleciona todos os discos
     
-    // Pega o primeiro movimento
-    const movimento = historico[numeroJogada];// guarda a jogada do historico
-    console.log('Executando movimento' + movimento.numero + ': ' + movimento.disco + ' (' + movimento.origem + ' → ' + movimento.destino + ')');// mostra movimento no console
+    const discosOrdenados = Array.from(todosDiscos).sort(function(a, b) {    //ordena do maior para o menor (para empilhar certo)
+        return Number(b.dataset.tamanho) - Number(a.dataset.tamanho);
+    });
     
-    const disco = document.getElementById(movimento.disco);//guarda disco do movimento para comparação
-    const destino = document.getElementById(movimento.destino);//guarda destino do movimento para comparação
+    discosOrdenados.forEach(function(disco) {    //move todos os discos para a Torre 1
+        torre1.prepend(disco);
+    });
+    
+    todosDiscos.forEach(function(disco) {     //remove a classe 'selecionado' de todos os discos
+        disco.classList.remove('selecionado');
+    });
+    
+    discoSelecionado = null;//limpa o disco selecionado
+
+
+    let numeroJogada = 0;//inicia com a primeira jogada
+
+    function executarProximo() {//executa uma jogada do historico e passa para a proxima
+        if (numeroJogada >= historico.length) {//verifica se a reprodução foi completa
+            console.log('Reprodução finalizada');
+            return;
+        }
+
+        const movimento = historico[numeroJogada];// guarda a jogada do historico
+        console.log('Executando movimento' + movimento.numero + ': ' + movimento.disco + ' (' + movimento.origem + ' → ' + movimento.destino + ')');// mostra movimento no console
+    
+        const disco = document.getElementById(movimento.disco);//guarda disco do movimento para comparação
+        const destino = document.getElementById(movimento.destino);//guarda destino do movimento para comparação
     
         destino.prepend(disco);//coloca o disco da jogada no destino da jogada
-        console.log( movimento.disco + ' movido para ' + movimento.destino);
-}
+        console.log( movimento.disco + ' movido para ' + movimento.destino);    
 
+        numeroJogada = numeroJogada + 1;//avança pra proxima jogada
+        setTimeout(executarProximo,1000);//espera para a reprodução não ser imediata
+    }
+    executarProximo();
+}
 
