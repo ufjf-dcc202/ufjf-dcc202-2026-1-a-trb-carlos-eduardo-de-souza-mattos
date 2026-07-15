@@ -122,6 +122,18 @@ function atualizarHistorico() {//atualiza html do histórico e contador
     });
 }
 
+/*REPRODUZIR HISTÓRICO*/
 
+document.querySelector('.btnReproduzir').addEventListener('click', reproduzirHistorico);
+function reproduzirHistorico() {
+    console.log('Reproduzir clicado');
+
+    if (historico.length === 0) {
+    console.log('Nenhum movimento no historico');
+    return;
+    }
+
+    console.log('Tem ' + historico.length + ' movimentos para reproduzir');
+}
 
 
