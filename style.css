@@ -131,6 +131,7 @@ body { /*Style para centralização do body*/
 }
 
 .contador {
+    padding: 5px;
     color: black;
     font-size: 25px;
     font-weight: bold;
@@ -153,4 +154,15 @@ body { /*Style para centralização do body*/
     gap: 40px;
     color: black;
     font-weight: bold;
+}
+
+.btnReproduzir {
+  padding: 5px;
+  font-size: 21px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  background: linear-gradient(45deg, #7036a5, #882af3);
+  color: black;
 }
